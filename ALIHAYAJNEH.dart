@@ -3,18 +3,13 @@
 
  void main (){
 
-    var a=[1,4,9,16,25,36,49,81,100];
-    var evenList=[];
+  var myList=[5,10,15,20,25];
+  var extractFirstAndLast=[];
+  extractFirstAndLast.add(myList.first);
+  extractFirstAndLast.add(myList.last);
 
-    for(var item in a){
+  print(extractFirstAndLast);
 
-      if(item.isEven==true){
-        evenList.add(item);
-      }
-
-    }
-
-    print(evenList);
 
 
  }
