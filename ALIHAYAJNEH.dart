@@ -1,18 +1,24 @@
 
 
-//Turn every number into square
+//concatenate two lists in the following order
 
-import 'dart:io';
+
 
 void main (){
 
-   var numbers=[1,2,3,4,5,6,7];
+      var list1=["Hello","take"];
+      var list2=["Dear","Sir"];
+      var list3=[];
 
-   for(int index=0;index<numbers.length;index++ ){
+      for(int index1=0;index1<list1.length;index1++){
+        for(int index2=0;index2<list2.length;index2++) {
+          list3.add(list1[index1]+" "+list2[index2]);
 
-       numbers[index]*=numbers[index];
 
-   }
+        }
 
-   print(numbers);
+
+      }
+
+      print(list3);
  }
