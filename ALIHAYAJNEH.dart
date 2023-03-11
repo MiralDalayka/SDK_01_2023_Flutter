@@ -1,18 +1,18 @@
 
 
-//Concatenate tow lists index-wise
+//Turn every number into square
 
+import 'dart:io';
 
 void main (){
 
-  var list1=["M","na","i","Ke"];
-  var list2=["y","me","s","lly"];
-  var ConcatenatedList=[];
+   var numbers=[1,2,3,4,5,6,7];
 
-  for(var index=0;index<list1.length;index++){
+   for(int index=0;index<numbers.length;index++ ){
 
-    ConcatenatedList.add(list1[index]+list2[index]);
-  }
+       numbers[index]*=numbers[index];
 
-     print(ConcatenatedList);
+   }
+
+   print(numbers);
  }
