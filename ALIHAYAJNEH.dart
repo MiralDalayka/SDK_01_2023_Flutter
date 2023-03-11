@@ -1,24 +1,24 @@
 
 
-//concatenate two lists in the following order
+// remove empty string from a list
 
 
 
 void main (){
 
-      var list1=["Hello","take"];
-      var list2=["Dear","Sir"];
-      var list3=[];
+  var list1=["Mike","","Emma","Kelly","","Brad",""];
+      // list1.removeWhere((element) => element=="");
 
-      for(int index1=0;index1<list1.length;index1++){
-        for(int index2=0;index2<list2.length;index2++) {
-          list3.add(list1[index1]+" "+list2[index2]);
+      // print(list1);
+
+      // or
+
+          while(list1.contains("")){
+            list1.remove("");
+          }
+
+          print(list1);
 
 
-        }
 
-
-      }
-
-      print(list3);
  }
