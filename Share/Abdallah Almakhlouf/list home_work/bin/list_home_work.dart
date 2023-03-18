@@ -29,22 +29,26 @@ void main() {
       }
     case (3):
       {
-        var list1 = ['m', 'na', 'i', 'ke'];
+        var list1 = ['m', 'na', 'i', 'ke',];
         var list2 = ['y', 'me', 's', 'lly'];
 
         var list3 = [];
-        int maxLength =
-        list1.length > list2.length ? list1.length : list2.length;
+        int maxLength = list1.length;
+        //list1.length > list2.length ? list1.length : list2.length;
 
         for (int i = 0; i < maxLength; i++) {
-          String str = '';
-          if (i < list1.length) {
-            str += list1[i];
-          }
-          if (i < list2.length) {
-            str += list2[i];
-          }
-          list3.add(str);
+          // String str = '';
+          // if (i < list1.length) {
+          //   str += list1[i];
+          // }
+          // if (i < list2.length) {
+          //   str += list2[i];
+          // }
+
+          list3.add(list1[i]+list2[i]);
+          // list3.add(str);
+
+
         }
 
         print(list3);
@@ -68,14 +72,19 @@ void main() {
         var list2 = [];
         int maxLength = list.length > list1.length ? list.length : list1.length;
         for (int i = 0; i < maxLength; i++) {
-          String str = '';
-          if (i < list.length) {
-            str += list[i];
+          for (int j = 0; j< maxLength; j++) {
+            list2.add(list[i] + list1[j]);
           }
-          if (i < list1.length) {
-            str += list1[i];
-          }
-          list2.add(str);
+
+
+          // String str = '';
+          // if (i < list.length) {
+          //   str += list[i];
+          // }
+          // if (i < list1.length) {
+          //   str += list1[i];
+          // }
+          // list2.add(str);
         }
 
         print(list2);
