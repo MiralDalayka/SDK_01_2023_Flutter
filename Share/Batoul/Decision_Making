@@ -1,0 +1,436 @@
+import 'dart:io';
+void main() {
+
+
+
+  //Question=>1
+   print("pleas enter number");
+   dynamic num1=num.parse(stdin.readLineSync());
+   if (num1>0)
+  { print("Positive");}
+   else
+  { print("Negative");}
+  
+  
+  
+  
+  
+
+
+  //Question=>2
+
+   print("pleas enter number");
+   dynamic num1=num.parse(stdin.readLineSync());
+   if (num1%2==0)
+   { print("Even");}
+   else
+   { print("Odd");}
+
+
+
+
+
+
+
+  //Question=>3
+
+  print("pleas enter two number");
+   dynamic num1=num.parse(stdin.readLineSync());
+   dynamic num2=num.parse(stdin.readLineSync());
+   if (num1==num2)
+   { print("Equal");}
+   else
+   { print("Not Equal");}
+
+
+
+
+
+
+
+
+//Question=>4
+
+     print("Pleas enter year");
+        int year = num.parse(stdin.readLineSync());
+        if (year%4==0){
+        if (year%100==0)
+        {
+         if(year%400==0)
+
+         { print("Leap year");}
+          else
+         { print("Common year");} }
+         else
+         {   print("Leap year");} }
+         else
+        {print("Common year");} }
+
+
+
+
+
+
+
+
+
+//Question=>5
+
+  print("Pleas enter your age");
+  int age = num.parse(stdin.readLineSync());
+
+  if (age >= 18) {
+    print("Congratulation!You are eligible for casting your vote.");
+  }
+  else if (age < 18) {
+    print("Sorry !Youare not allowedtovote.");
+  }
+}
+
+
+
+
+
+
+
+
+  // Question=>6
+   print("pleas enter m");
+  dynamic m=num.parse(stdin.readLineSync());
+  if (m>0)
+ 
+    { print("1");}
+      else if (m==0)
+   { print("0");}
+       else
+   { print("-1");}
+
+
+
+
+
+
+  // Question=>7
+ print("pleas enter 3 numbers");
+
+  dynamic num1 = num.parse(stdin.readLineSync());
+  dynamic num2 = num.parse(stdin.readLineSync());
+  dynamic num3 = num.parse(stdin.readLineSync());
+  print("1stNumber= $num1      2ndNumber= $num2   3rdNumber=$num3 ");
+
+
+  if (num1 > num2 && num1 > num3)
+    {print("The 1stNumber is the greatest among three");}
+
+  else if  (num2>num1 && num2 >num3)
+    {print("The   2ndNumber is the greatest among three");}
+
+    else if(num3>num2 && num3>num1)
+    {print("The 3rdNumber is the greatest among three");}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Question=>8
+  // print("pleas enter temperature");
+  // dynamic temperature=num.parse(stdin.readLineSync());
+  // if (temperature<0)
+  // { print("Freezing weather");}
+  //
+  // else if (temperature>=0 && temperature<10)
+  // { print("Very Cold weather");}
+  //
+  // else if (temperature>=10 && temperature<20)
+  //  { print("Very Cold weather");}
+  //
+  // else if (temperature>=20 && temperature<30)
+  //  { print("Normal in Temp");}
+  //
+  // else if (temperature>=30 && temperature<40)
+  //  { print("Its Hot");}
+  //
+  // else  if (temperature>=40)
+  // { print(" Its Very Hot");}
+
+
+
+
+
+
+
+
+
+  // Question=>9
+  // print("pleas enter 3 numbers");
+  // dynamic num1=num.parse(stdin.readLineSync());
+  // dynamic num2=num.parse(stdin.readLineSync());
+  // dynamic num3=num.parse(stdin.readLineSync());
+  //
+  // if (num1+num2+num3==180)
+  // { print("Triangle is valid");}
+  // else
+  // { print("The triangle is not valid.");}
+
+
+
+
+
+
+
+
+//Question=>10
+
+  print("Pleas enter num");
+ num num1 = num.parse(stdin.readLineSync());
+  if(num1==1)
+    {print("Sunday");}
+  else if(num1==2)
+  {print("Monday");}
+
+  else if(num1==3)
+  {print("Tuesday");}
+
+  else if(num1==4)
+  {print("Wednesday");}
+
+  else if(num1==5)
+  {print("Thursday");}
+
+  else if(num1==6)
+  {print("Friday");}
+
+  else if(num1==7)
+  {print("Saturday");}
+
+
+
+
+
+
+
+
+
+//Question=>11
+
+  print("Pleas enter num");
+ num num1 = num.parse(stdin.readLineSync());
+  if(num1==1)
+    {print("January");}
+  else if(num1==2)
+  {print("February");}
+
+  else if(num1==3)
+  {print("March");}
+
+  else if(num1==4)
+  {print("April");}
+
+  else if(num1==5)
+  {print("May");}
+
+  else if(num1==6)
+  {print("June");}
+
+  else if(num1==7)
+  {print("July");}
+
+  else if(num1==8)
+  {print("August");}
+
+  else if(num1==9)
+  {print("September");}
+
+  else if(num1==10)
+  {print("October");}
+
+  else if(num1==11)
+  {print("November");}
+
+  else if(num1==12)
+  {print("December");}
+
+
+
+
+
+
+
+
+
+
+
+
+//Question=>12
+
+  print("input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer ");
+var phy =num.parse(stdin.readLineSync());
+var chem = num.parse(stdin.readLineSync());
+var bio = num.parse(stdin.readLineSync());
+var math = num.parse(stdin.readLineSync());
+var comp = num.parse(stdin.readLineSync());
+
+if ((phy + chem + bio +math+ comp)/5>=90 )
+  {print("Grade A");}
+else if ((phy + chem + bio +math+ comp)/5>=80 &&  (phy + chem + bio +math+ comp)/5<90)
+{print("Grade B");}
+else if ((phy + chem + bio +math+ comp)/5>=70 && (phy + chem + bio +math+ comp)<80)
+{print("Grade C");}
+else if ((phy + chem + bio +math+ comp)/5>=60 && (phy + chem + bio +math+ comp)<70)
+{print("Grade D");}
+else if ((phy + chem + bio +math+ comp)/5>=40 && (phy + chem + bio +math+ comp)<60)
+{print("Grade E");}
+else if ((phy + chem + bio +math+ comp)/5<40)
+{print("Grade F");}
+
+
+
+
+
+
+
+
+
+
+
+
+//Question=>13
+
+  print("Please enter your salary to calculate your bounce:");
+var salary =num.parse(stdin.readLineSync());
+dynamic bounce;
+ if (salary>=2000)
+   {print("Your bounce =  ${salary*0.15}");}
+
+ else  if (salary<2000 && salary >=1300)
+ {print("Your bounce =  ${salary*0.20}");}
+
+ else  if (salary<1300 && salary >=700)
+ {print("Your bounce =  ${salary*0.35}");}
+
+ else  if (salary<700)
+ {print("Your bounce =  ${salary*0.40}");}
+
+
+
+
+
+
+
+
+
+
+
+//Question=>14
+arithmetic_operations()
+{
+
+  print("Pleas enter 2 number");
+  num num1=num.parse(stdin.readLineSync());
+  num num2=num.parse(stdin.readLineSync());
+  print("Pleas enter the operation that you want make it (+ , - , * , / )");
+  String operation=stdin.readLineSync();
+
+  switch(operation)
+  {
+        case '+':
+        print("number1 + number2= ${num1+num2}");
+        break;
+
+
+        case '-':
+        print("number1 - number2= ${num1-num2}");
+        break;
+
+        case '*':
+        print("number1 * number2= ${num1*num2}");
+        break;
+
+        case '/':
+        print("number1 / number2= ${num1/num2}");
+        break;
+
+       default:
+       print(" Sory,invalid operatin");
+
+
+
+  }
+
+}
+void main ()
+{
+  arithmetic_operations();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Question=>15
+
+// print("Pleas enter alphabet");
+// var alphabet=stdin.readLineSync();
+//
+//  switch(alphabet)
+// {
+//    case 'a':
+//      print("Vowel");
+//      break;
+//
+//    case 'i':
+//      print("Vowel");
+//      break;
+//
+//    case 'u':
+//      print("Vowel");
+//      break;
+//
+//    case 'e':
+//      print("Vowel");
+//      break;
+//
+//    case 'o':
+//      print("Vowel");
+//      break;
+//    default:
+//      print("Constant");
+//
+//  }
+
+
+
+
+
+
+
+}
