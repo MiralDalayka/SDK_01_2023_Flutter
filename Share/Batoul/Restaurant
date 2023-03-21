@@ -1,0 +1,104 @@
+
+int price=0;
+sandwiches () {
+  List sand = [
+    'HOTDOG',
+    'CHICKEN SANDWICHE',
+    'VEGETABLE SANDWICHE',
+    'FRESH TUNA SANDWICHE',
+    'TOMATO AND MOZZARELLA SANDWICHE'
+  ];
+  print(sand);
+  print("If you want HOTDOG pleas enter 1");
+  print("If you want CHICKEN SANDWICHE pleas enter 2");
+  print("If you want VEGETABLE SANDWICHE pleas enter 3");
+  print("If you want FRESH TUNA SANDWICHE pleas enter 4");
+  print("If you want TOMATO AND MOZZARELLA SANDWICHE pleas enter 5");
+  print("If you want  stop your order pleas enter -1");
+
+
+  int sum = 0;
+  print("Pleas enter number/s of your dish/s");
+  int dish_number = num.parse(stdin.readLineSync());
+
+  if (dish_number > 0 && dish_number <= 5)
+    sand.add(dish_number);
+  else {
+    print("error in your order");
+  }
+  
+  
+  
+  print ("if you want remove your order pleas enter 111");
+ int remove=num.parse(stdin.readLineSync());
+ if (remove==111)
+  {print(sand.remove(dish_number));}
+  
+}
+
+
+
+
+
+
+
+burger_sandwiches () {
+  List burger_sand = [
+    'CHEESE BURGER',
+    'BEEF BURGER',
+    'CHICKEN BURGER',
+    'VEGETABLE BURGER',
+    'FISH BURGER'
+  ];
+  print(burger_sand);
+  print("*** ALL SERVED WITH FRENCH FRIES AND FRESH SALAD***");
+  print("If you want HOTDOG pleas enter 6");
+  print("If you want CHICKEN SANDWICHE pleas enter 7");
+  print("If you want VEGETABLE SANDWICHE pleas enter 8");
+  print("If you want FRESH TUNA SANDWICHE pleas enter 9");
+  print("If you want TOMATO AND MOZZARELLA SANDWICHE pleas enter 10");
+
+
+
+  int sum = 0;
+  print("Pleas enter number/s of your dish/s");
+  int dish_number = num.parse(stdin.readLineSync());
+
+  if (dish_number > 5 && dish_number <= 10)
+    burger_sand .add(dish_number);
+  else {
+    print("error in your order");
+  }
+
+
+  //
+  // print ("if you want remove your order pleas enter 111");
+  // int remove=num.parse(stdin.readLineSync());
+  // if (remove==111)
+  // {print( burger_sand .remove(dish_number));}
+  //
+  // else   if (remove==Null) print("your order is done");
+
+}
+
+
+
+
+void main(){
+
+  print("If you want SANDWICHES pleas enter 1");
+  print("If you want BURGER SANDWICHES  pleas enter 2");
+  print("If you want SANDWICHES and BURGER SANDWICHES pleas enter 3");
+  int num1=num.parse(stdin.readLineSync());
+  if (num1==1)
+   { sandwiches ();}
+  else if (num1==2)
+   { burger_sandwiches ();}
+    else if (num1==3)
+      {sandwiches ();
+      burger_sandwiches ();
+      }
+      else{ ("Sorry ,there is error in your order ");}
+
+ }
+
