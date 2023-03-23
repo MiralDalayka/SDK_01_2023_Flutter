@@ -1,0 +1,184 @@
+ //Question=>1
+
+ for(int i=1; i<=10; i++)
+   {print(i);}
+
+
+
+
+//Question=>2
+{
+  print("pleas enter 2 number");
+  int sum=0;
+  int num1=num.parse(stdin.readLineSync());
+  int num2=num.parse(stdin.readLineSync());
+  for(int i =num1+1 ; i<num2; i++)
+    { sum=sum+i;
+
+    }
+  print (sum);
+}
+
+
+
+
+
+//Question=>3
+ print("pleas enter number");
+
+  int num1=num.parse(stdin.readLineSync());
+  print ("The multiplication table of your number is:");
+  for (int i=0;i<=12;i++)
+    {
+      print("$i * $num1 = ${i * num1}");
+    }
+
+
+
+
+
+
+
+//Question=>4
+ print("pleas enter your number");
+
+  int num1=num.parse(stdin.readLineSync());
+  print ("The even numbers up to your number are :");
+  for (int i=0;i<=num1;i++)
+    {
+      if(i%2==0)
+      {print(i);}
+    }
+
+
+
+
+//Question=>5
+
+int pass=1234;
+  print("pleas enter password");
+  int pass2=num.parse(stdin.readLineSync());
+  if (pass2==pass)
+{print("Correct Password");}
+  else {print("InCorrect Password");}
+
+  
+
+//Question=>7
+print("enter number to compute the sum of the digits of an integer. ");
+
+  int num1 = num.parse(stdin.readLineSync());
+  int num2=0;
+  int num3=0;
+  for (int i = num1; i > 0; i = (i / 10).floor()) {
+   num2 += (i % 10);
+  
+}
+  print("The sum of the digits is:${num2+num3}");
+
+
+
+
+
+
+
+
+//Question=>9
+   print("pleas enter  3 number ");
+   int num1=num.parse(stdin.readLineSync());
+   int num2=num.parse(stdin.readLineSync());
+   int num3=num.parse(stdin.readLineSync());
+
+while(num2>num1 && num3>num2)
+  {
+    print("true");
+    break;
+  }
+if (num3<num2)
+  { print("false");}
+
+
+//Question=>11
+
+  print(" enter word ");
+  String str1=stdin.readLineSync();
+
+  print(str1.toUpperCase());
+
+
+
+//Question=>12
+   print(" enter word ");
+  String str1=stdin.readLineSync();
+
+  print(str1.toLowerCase());
+
+
+
+
+
+//Question=>14
+print("Enter two string");
+String str1=stdin.readLineSync();
+String str2=stdin.readLineSync();
+while(str1.length!=str2.length)
+    {
+print(str1+str2);
+    break;
+
+    }
+
+
+
+
+//Question=>18
+print ("Enter number");
+  int num1=num.parse(stdin.readLineSync());
+
+for (int i=1; i<=num1; i++)
+
+{
+print("Number is : $i and cube of $i is :${i*i*i}");}}
+
+
+
+//Question=>19
+ print("Display n terms of odd natural number and their sum ");
+  int num1, num2, num3 = 0;
+  int num4 = num.parse(stdin.readLineSync());
+  for (num1 = 1; num1 <= num4; num1++)
+  {
+    stdout.write(2 * num1 - 1);
+    stdout.write(" ");
+
+    num3+= 2 * num1 - 1;
+
+  }
+  print(" ");
+  print( "The Sum of odd Natural Numbers up to $num4 is :$num3" );
+
+
+
+
+
+//Question=>20
+int j=0;
+
+      print(j+1);
+      print("${j+2}${j+2} ");
+      print("${j+3}${j+3}${j+3} ");
+      print("${j+4}${j+4}${j+4}${j+4} ");}
+
+
+
+
+//Question=>21
+
+for (int i=0; i<10000000000; i++)
+{
+  print(" enter positive number ");
+  int num1=num.parse(stdin.readLineSync());
+  String num2=num1.toString();
+  print("Number of digits in the number: ${num2.length}");
+  break;
+}
