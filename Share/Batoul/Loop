@@ -107,6 +107,36 @@ List list1=[num1,num2,num3,num4,num5,num6,num7];
 
 
 
+
+// Question:7
+func(){
+  List list1 = [];
+  List list2 = [];
+  List list3= [];
+
+  for (int i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      list3.add(i);
+    } else if (i % 3 == 0) {
+      list1.add(i);
+    } else if (i % 5 == 0) {
+      list2.add(i);
+    }
+  }
+  print('Divided by 3: ${list1.join(', ')}');
+  print('Divided by 5: ${list2.join(', ')}');
+  print('Divided by 3 & 5: ${list3.join(', ')}');}
+  void main()
+  {
+   func();
+  }
+
+
+
+
+
+
+
 // Question:11
   print("Enter any word");
  String str1= stdin.readLineSync();
