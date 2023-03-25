@@ -1,0 +1,246 @@
+   // Question:1
+
+  print("Print number from 1 to 10");
+  for (int i=1; i<=10;i++)
+  {print(i);}
+
+
+
+  // Question:2
+print("Print two number");
+ 
+  int num1 = num.parse(stdin.readLineSync());
+  int num2 = num.parse(stdin.readLineSync());
+  int sum = 0;
+
+
+while(num1<num2)
+{ for (int i=num1+1;  i<num2; i++)
+  { sum=sum+i;}
+
+ print (sum);
+break;}
+
+
+
+  while(num1>num2)
+  { for (int i=num2+1;  i<num1; i++)
+  { sum=sum+i;}
+
+  print (sum);
+  break;}
+
+
+
+
+
+  // Question:3
+  print("print your number.");
+  int num1 = num.parse(stdin.readLineSync());
+ for (int i=0; i<=12;i++)
+{
+  print("$i * $num1=${i*num1}");
+}
+
+
+
+
+
+
+  // Question:4
+  print("print your number.");
+  int num1 = num.parse(stdin.readLineSync());
+  print("The even numbers up to input number is:");
+ for (int i=0; i<=num1;i++)
+{
+ if(i%2==0)
+   {print(i);}
+}
+
+
+
+// Question:5
+print("Enter password to check if correct or not");
+  int password=1234;
+  int pass = num.parse(stdin.readLineSync());
+
+  if (pass==password)
+  {print("Correct password");}
+  else
+  {print("Incorrect password");}
+
+
+
+
+
+// Question:6
+  print("Pleas enter seven numbers");
+ int num1=num.parse(stdin.readLineSync());
+ int num2=num.parse(stdin.readLineSync());
+ int num3=num.parse(stdin.readLineSync());
+ int num4=num.parse(stdin.readLineSync());
+ int num5=num.parse(stdin.readLineSync());
+ int num6=num.parse(stdin.readLineSync());
+ int num7=num.parse(stdin.readLineSync());
+
+List list1=[num1,num2,num3,num4,num5,num6,num7];
+
+  var maximumNumber =
+  list1.reduce((value, element) => value > element ? value : element);
+  print("MAX NUM IS =$maximumNumber");
+
+
+
+
+// Question:7
+ print("Enter number to compute the sum of the digits of an integer.");
+
+
+  for (int i=1; i<=1; i ++)
+    {
+      int num1 = num.parse(stdin.readLineSync());
+      int c=(num1/10).floor();
+      int num3=num1%10;
+      print("The sum of the digits is:${c+num3}");
+
+
+
+
+
+
+// Question:7
+func(){
+  List list1 = [];
+  List list2 = [];
+  List list3= [];
+
+  for (int i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      list3.add(i);
+    } else if (i % 3 == 0) {
+      list1.add(i);
+    } else if (i % 5 == 0) {
+      list2.add(i);
+    }
+  }
+  print('Divided by 3: ${list1.join(', ')}');
+  print('Divided by 5: ${list2.join(', ')}');
+  print('Divided by 3 & 5: ${list3.join(', ')}');}
+  void main()
+  {
+   func();
+  }
+
+
+
+
+
+
+
+// Question:11
+  print("Enter any word");
+ String str1= stdin.readLineSync();
+
+  print (str1.toUpperCase());
+
+
+// Question:12
+print("Enter any word");
+ String str1= stdin.readLineSync();
+
+  print (str1.toLowerCase());
+
+
+// Question:13
+  String str1 = "Python Sample";
+
+  String str2=str1.substring(0 , 3);
+  
+ print(str2);}
+
+
+// Question:14
+  print("Enter two string");
+  String str1 = "Python";
+  String str2 = "Tutorial Sample";
+  String str3 = str2.replaceAll(" Sample", "Python");
+  String str4=str1+str3;
+  print(str4.trim());
+
+
+// Question:16
+ print("Pleas enter number");
+  int num1 = num.parse(stdin.readLineSync());
+
+  if (num1 % 2 == 0) {
+    print("Not prime");
+  }
+  else if (num1 % 3 == 0) {
+    print("Not prime");
+  }
+  else if (num1 % 5 == 0) {
+    print("Not prime");
+  }
+  else {
+    print("prime");
+  }
+
+
+
+
+
+
+
+
+
+
+// Question:18
+  print("Enter number");
+  int num1=num.parse(stdin.readLineSync());
+  for (int i=0; i<=num1; i++)
+    {
+      print ("Number is : $i and cube of $i is :${i*i*i}");
+    }
+
+
+
+
+
+
+// Question:20
+i=1;
+  print(i);
+
+  i=2;
+while(i==2)
+  {stdout.write(i);
+ print(i);
+  break;}
+  i=3;
+  while(i==3)
+  {stdout.write(i);
+  stdout.write(i);
+  print(i);
+  break;}
+
+  i=4;
+  while(i==4)
+  {stdout.write(i);
+  stdout.write(i);
+  stdout.write(i);
+  print(i);
+  break;}
+
+
+
+
+
+
+// Question:21
+  print("Enter positive number");
+  int num1 = num.parse(stdin.readLineSync());
+
+while(num1<1000000)
+  {String num2=num1.toString();
+  print("Number of digits in the number: ${num2.length}");
+break;}

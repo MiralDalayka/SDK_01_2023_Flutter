@@ -1,134 +1,96 @@
+//Question:1
+
+print("Pleas enter number to check if pos or neg");
+  int num1=num.parse(stdin.readLineSync());
+  if (num1.isNegative)
+ { print ("The number is neg");}
+  else
+  {print ("The number is pos");}
+
+
+
+
+//Question:2
+print("Pleas enter number to check if even or odd");
+  int num1=num.parse(stdin.readLineSync());
+  if (num1.isEven)
+  { print ("The number is even");}
+  else
+  {print ("The number is odd");}
+
+
+
+
+
+//Question:3
+print("Pleas enter two number to check if equal or not");
+  int num1=num.parse(stdin.readLineSync());
+  int num2=num.parse(stdin.readLineSync());
+  if (num1==num2)
+  { print ("The numbers is equal");}
+  else
+  {print ("The numbers is not equal");}
+
+
+
+
+
+//Question:4
+ print("Pleas enter the year");
+  int year=num.parse(stdin.readLineSync());
+
+  if (year%4==0)
+  {
+    if (year % 100 == 0)
+  {
+    if (year % 100 == 0)  { print("Leap year");}  else {print("Common year");}
+  }
+  else { print("Leap year");}
+  }
+  else
+  {print("Common year");}
+
+
+
+
+
+
+//Question:5
+
+  print("Pleas enter the age");
+  int age=num.parse(stdin.readLineSync());
+
+  if (age>=18)
+  { print("Congratulation!You are eligible for casting your vote.");}
+
+  else
+  {print("You are not allowed to vote.");}
+
+
+
+
+
+//Question:6
+  print("Pleas enter the value of an integer m");
+  int m =num.parse(stdin.readLineSync());
+  print(m.sign);
+
+
+
+//Question:7
 import 'dart:io';
+import 'dart:math';
 void main() {
 
-
-
-  //Question=>1
-   print("pleas enter number");
-   dynamic num1=num.parse(stdin.readLineSync());
-   if (num1>0)
-  { print("Positive");}
-   else
-  { print("Negative");}
+  print("Pleas enter 3 numbers");
+  int num1=num.parse(stdin.readLineSync());
+  int num2=num.parse(stdin.readLineSync());
+  int num3=num.parse(stdin.readLineSync());
+  int max_num=max(num1,num2);
+  max_num=max(max_num,num3);
   
-  
-  
-  
-  
-
-
-  //Question=>2
-
-   print("pleas enter number");
-   dynamic num1=num.parse(stdin.readLineSync());
-   if (num1%2==0)
-   { print("Even");}
-   else
-   { print("Odd");}
-
-
-
-
-
-
-
-  //Question=>3
-
-  print("pleas enter two number");
-   dynamic num1=num.parse(stdin.readLineSync());
-   dynamic num2=num.parse(stdin.readLineSync());
-   if (num1==num2)
-   { print("Equal");}
-   else
-   { print("Not Equal");}
-
-
-
-
-
-
-
-
-//Question=>4
-
-     print("Pleas enter year");
-        int year = num.parse(stdin.readLineSync());
-        if (year%4==0){
-        if (year%100==0)
-        {
-         if(year%400==0)
-
-         { print("Leap year");}
-          else
-         { print("Common year");} }
-         else
-         {   print("Leap year");} }
-         else
-        {print("Common year");} }
-
-
-
-
-
-
-
-
-
-//Question=>5
-
-  print("Pleas enter your age");
-  int age = num.parse(stdin.readLineSync());
-
-  if (age >= 18) {
-    print("Congratulation!You are eligible for casting your vote.");
-  }
-  else if (age < 18) {
-    print("Sorry !Youare not allowedtovote.");
-  }
-}
-
-
-
-
-
-
-
-
-  // Question=>6
-   print("pleas enter m");
-  dynamic m=num.parse(stdin.readLineSync());
-  if (m>0)
- 
-    { print("1");}
-      else if (m==0)
-   { print("0");}
-       else
-   { print("-1");}
-
-
-
-
-
-
-  // Question=>7
- print("pleas enter 3 numbers");
-
-  dynamic num1 = num.parse(stdin.readLineSync());
-  dynamic num2 = num.parse(stdin.readLineSync());
-  dynamic num3 = num.parse(stdin.readLineSync());
-  print("1stNumber= $num1      2ndNumber= $num2   3rdNumber=$num3 ");
-
-
-  if (num1 > num2 && num1 > num3)
-    {print("The 1stNumber is the greatest among three");}
-
-  else if  (num2>num1 && num2 >num3)
-    {print("The   2ndNumber is the greatest among three");}
-
-    else if(num3>num2 && num3>num1)
-    {print("The 3rdNumber is the greatest among three");}
-
-
+  print("1st Number=$num1 , 2nd Number=$num2 , 3rd Number=$num3");
+  print("The 3rd Number is the greatest among three is :$max_num");
 }
 
 
@@ -142,6 +104,28 @@ void main() {
 
 
 
+  // Question:8
+  print("pleas enter temperature");
+  dynamic temperature = num.parse(stdin.readLineSync());
+  if (temperature < 0) {
+    print("Freezing weather");
+  }
+
+  else if (temperature >= 0 && temperature < 10) {
+    print("Very Cold weather");
+  }
+
+  else if (temperature >= 10 && temperature < 20)
+   { print("Very Cold weather");}
+
+  else if (temperature>=20 && temperature<30)
+   { print("Normal in Temp");}
+
+  else if (temperature>=30 && temperature<40)
+   { print("Its Hot");}
+
+  else  if (temperature>=40)
+  { print(" Its Very Hot");}
 
 
 
@@ -151,27 +135,16 @@ void main() {
 
 
 
+ // Question:9
+  print("pleas enter 3 numbers");
+  dynamic num1=num.parse(stdin.readLineSync());
+  dynamic num2=num.parse(stdin.readLineSync());
+  dynamic num3=num.parse(stdin.readLineSync());
 
-  // Question=>8
-  // print("pleas enter temperature");
-  // dynamic temperature=num.parse(stdin.readLineSync());
-  // if (temperature<0)
-  // { print("Freezing weather");}
-  //
-  // else if (temperature>=0 && temperature<10)
-  // { print("Very Cold weather");}
-  //
-  // else if (temperature>=10 && temperature<20)
-  //  { print("Very Cold weather");}
-  //
-  // else if (temperature>=20 && temperature<30)
-  //  { print("Normal in Temp");}
-  //
-  // else if (temperature>=30 && temperature<40)
-  //  { print("Its Hot");}
-  //
-  // else  if (temperature>=40)
-  // { print(" Its Very Hot");}
+  if (num1+num2+num3==180)
+  { print("Triangle is valid");}
+  else
+  { print("The triangle is not valid.");}
 
 
 
@@ -181,25 +154,7 @@ void main() {
 
 
 
-  // Question=>9
-  // print("pleas enter 3 numbers");
-  // dynamic num1=num.parse(stdin.readLineSync());
-  // dynamic num2=num.parse(stdin.readLineSync());
-  // dynamic num3=num.parse(stdin.readLineSync());
-  //
-  // if (num1+num2+num3==180)
-  // { print("Triangle is valid");}
-  // else
-  // { print("The triangle is not valid.");}
-
-
-
-
-
-
-
-
-//Question=>10
+//Question:10
 
   print("Pleas enter num");
  num num1 = num.parse(stdin.readLineSync());
@@ -231,7 +186,8 @@ void main() {
 
 
 
-//Question=>11
+
+//Question:11
 
   print("Pleas enter num");
  num num1 = num.parse(stdin.readLineSync());
@@ -277,31 +233,28 @@ void main() {
 
 
 
-
-
-
-
-//Question=>12
+//Question:12
 
   print("input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer ");
-var phy =num.parse(stdin.readLineSync());
-var chem = num.parse(stdin.readLineSync());
-var bio = num.parse(stdin.readLineSync());
-var math = num.parse(stdin.readLineSync());
-var comp = num.parse(stdin.readLineSync());
+  var phy =num.parse(stdin.readLineSync());
+  var chem = num.parse(stdin.readLineSync());
+  var bio = num.parse(stdin.readLineSync());
+  var math = num.parse(stdin.readLineSync());
+  var comp = num.parse(stdin.readLineSync());
 
-if ((phy + chem + bio +math+ comp)/5>=90 )
+ var grade=(phy + chem + bio +math+ comp)/5;
+  if (grade>=90 )
   {print("Grade A");}
-else if ((phy + chem + bio +math+ comp)/5>=80 &&  (phy + chem + bio +math+ comp)/5<90)
-{print("Grade B");}
-else if ((phy + chem + bio +math+ comp)/5>=70 && (phy + chem + bio +math+ comp)<80)
-{print("Grade C");}
-else if ((phy + chem + bio +math+ comp)/5>=60 && (phy + chem + bio +math+ comp)<70)
-{print("Grade D");}
-else if ((phy + chem + bio +math+ comp)/5>=40 && (phy + chem + bio +math+ comp)<60)
-{print("Grade E");}
-else if ((phy + chem + bio +math+ comp)/5<40)
-{print("Grade F");}
+  else if (grade>=80 &&  grade<90)
+  {print("Grade B");}
+  else if (grade>=70 && grade<80)
+  {print("Grade C");}
+  else if (grade>=60 && grade<70)
+  {print("Grade D");}
+  else if (grade>=40 && grade<60)
+  {print("Grade E");}
+  else if (grade<40)
+  {print("Grade F");}
 
 
 
@@ -309,12 +262,7 @@ else if ((phy + chem + bio +math+ comp)/5<40)
 
 
 
-
-
-
-
-
-//Question=>13
+//Question:13
 
   print("Please enter your salary to calculate your bounce:");
 var salary =num.parse(stdin.readLineSync());
@@ -338,99 +286,74 @@ dynamic bounce;
 
 
 
+//Question:14
 
+operators(){
+  print("Menu driven calculator");
+  print("1- +");
+  print("2- -");
+  print("3- *");
+  print("4- %");
+  print("Pleas enter the operator ane two numbers");
+  String operator=stdin.readLineSync();
 
+  int num1=num.parse(stdin.readLineSync());
+  int num2=num.parse(stdin.readLineSync());
+  switch(operator){
+    case '+':
+      print("num1+num2=${num1+num2}");
+      break;
+    case '-':
+      print("num1-num2=${num1-num2}");
+      break;
+    case '*':
+      print("num1*num2=${num1*num2}");
+      break;
+    case '%':
+      print("num1%num2=${num1%num2}");
+      break;
 
-//Question=>14
-arithmetic_operations()
-{
-
-  print("Pleas enter 2 number");
-  num num1=num.parse(stdin.readLineSync());
-  num num2=num.parse(stdin.readLineSync());
-  print("Pleas enter the operation that you want make it (+ , - , * , / )");
-  String operation=stdin.readLineSync();
-
-  switch(operation)
-  {
-        case '+':
-        print("number1 + number2= ${num1+num2}");
-        break;
-
-
-        case '-':
-        print("number1 - number2= ${num1-num2}");
-        break;
-
-        case '*':
-        print("number1 * number2= ${num1*num2}");
-        break;
-
-        case '/':
-        print("number1 / number2= ${num1/num2}");
-        break;
-
-       default:
-       print(" Sory,invalid operatin");
-
-
+    default:
+      print("Sorry,Error operation ");
+      break;
 
   }
-
 }
-void main ()
-{
-  arithmetic_operations();
+void main() {
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Question=>15
-
-// print("Pleas enter alphabet");
-// var alphabet=stdin.readLineSync();
-//
-//  switch(alphabet)
-// {
-//    case 'a':
-//      print("Vowel");
-//      break;
-//
-//    case 'i':
-//      print("Vowel");
-//      break;
-//
-//    case 'u':
-//      print("Vowel");
-//      break;
-//
-//    case 'e':
-//      print("Vowel");
-//      break;
-//
-//    case 'o':
-//      print("Vowel");
-//      break;
-//    default:
-//      print("Constant");
-//
-//  }
-
-
-
-
-
+operators();
 
 
 }
+
+
+
+
+
+
+
+
+//Question:15
+  print("Pleas enter any alphabet");
+  String alphabet=stdin.readLineSync();
+  switch(alphabet){
+    case 'a':
+      print("vowel ");
+      break;
+    case 'i':
+      print("vowel ");
+      break;
+    case 'o':
+      print("vowel ");
+      break;
+    case 'u':
+      print("vowel ");
+      break;
+    case 'e':
+      print("vowel ");
+      break;
+      default:
+        print("constant ");
+      break;
+
+  }
