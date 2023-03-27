@@ -25,31 +25,45 @@ import 'dart:io';
 //
 //
 // }
-// class vehicle{
-//   int speed=0;
-//   int passenger=1;
-//   String fuel;
-//   void go(){
-//     print("object");
-// }
-// void stop(){
-//     print("object");
-//
-// }
-// void changedirction(){
-//
-// }
-// }
-// class car extends vehicle{
-//   String model;
-//   int doors;
-//   String atomaker;
-//   _radio(){
-//     print("no body touch my radio");
-//   }
-//   windishieldwiper(){
-//     print("0");
-//
-//   }
-//   ch
-// }
+class Vehicle {
+  int speed ;
+  int passenger ;
+  String fuel;
+  Vehicle(String f){
+     speed = 0;
+     passenger = 1;
+     fuel=f;
+     print("******");
+  }
+  void go() {
+    print("Go Function");
+  }
+  void stop() {
+    print("Stop Function");
+  }
+  void changedirction() {
+    print("Change Direction Function");
+
+  }
+}
+class Car extends Vehicle{
+  String model;
+  int doors;
+  String autoMaker;
+  Car(this.model, this.doors, this.autoMaker,String f) : super(f) {
+    print("^^^");
+  }
+  _radio(){
+    print("no body touch my radio");
+  }
+  windishieldwiper(){
+    print("0");
+
+  }
+
+}
+
+void main(){
+  Car c = Car("&",1,"*","@");
+  print(c.speed);
+}
