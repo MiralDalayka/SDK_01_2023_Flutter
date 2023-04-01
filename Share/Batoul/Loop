@@ -1,45 +1,102 @@
-   // Question:1
+   import 'dart:io';
+import 'functions.dart';
+import 'dart:math';
 
-  print("Print number from 1 to 10");
-  for (int i=1; i<=10;i++)
-  {print(i);}
+void main() {
+  //Loop
+
+  //number();
+
+  //summation();
+
+  // multiplication_table();
+
+  //even_numbers();
+
+  //password();
+
+  //max();
+
+  // sum_of_the_digits();
 
 
+ //div_by_3_5();
 
-  // Question:2
-print("Print two number");
+ //abc();
+
+ // time();
+
+  //uppercase();
+
+  //lowercase();
+
+  //extract();
+
+ // two_string();
+
+ //guess_number();
+
+  //is_prime();
+
+  //cube_of_the_number();
+
+  //odd_numbers();
+
+ // Fibonacci();
+
+  //pattern();
+
+  // num_of_the_digits();
+ }
  
-  int num1 = num.parse(stdin.readLineSync());
-  int num2 = num.parse(stdin.readLineSync());
-  int sum = 0;
-
-
-while(num1<num2)
-{ for (int i=num1+1;  i<num2; i++)
-  { sum=sum+i;}
-
- print (sum);
-break;}
-
-
-
-  while(num1>num2)
-  { for (int i=num2+1;  i<num1; i++)
-  { sum=sum+i;}
-
-  print (sum);
-  break;}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ number()
+  {
+    print("Print number from 1 to 10");
+    for (int i=1; i<=10; i++)
+    {print(i);}
+  }
 
 
 
-
-
-  // Question:3
-  print("print your number.");
-  int num1 = num.parse(stdin.readLineSync());
- for (int i=0; i<=12;i++)
+summation()
 {
-  print("$i * $num1=${i*num1}");
+  print("Please enter two numbers");
+  dynamic num1 =num.parse(stdin.readLineSync());
+  dynamic num2 =num.parse(stdin.readLineSync());
+  int sum=0;
+
+  if (num1<num2)
+    {
+        for (int i=num1+1; i<num2 ;i++)   {sum+=i;}
+        print(sum);
+    }
+
+
+  if (num1>num2)
+  {
+       for (int i=num2+1; i<num1 ;i++)   {sum+=i;}
+       print(sum);
+  }
+
+
+}
+
+
+
+multiplication_table()
+{
+  print("Please enter number to calculate multiplication table");
+  dynamic num1 =num.parse(stdin.readLineSync());
+  for (int i=0; i<=12; i++)
+    {print("$i * $num1=${i*num1}");}
 }
 
 
@@ -47,69 +104,81 @@ break;}
 
 
 
-  // Question:4
-  print("print your number.");
-  int num1 = num.parse(stdin.readLineSync());
-  print("The even numbers up to input number is:");
- for (int i=0; i<=num1;i++)
+even_numbers()
 {
- if(i%2==0)
-   {print(i);}
+  print("Please enter number");
+  dynamic num1 =num.parse(stdin.readLineSync());
+  for(int i=0; i<=num1; i++)
+  {
+    if (i.isEven)
+      {print (i);}
+  }
 }
 
 
-
-// Question:5
-print("Enter password to check if correct or not");
-  int password=1234;
+password() {
+  int password = 1234;
+  print("Please enter password");
   int pass = num.parse(stdin.readLineSync());
 
-  if (pass==password)
-  {print("Correct password");}
-  else
-  {print("Incorrect password");}
+  if (pass == password) {
+    print("Correct password");
+  }
 
-
-
-
-
-// Question:6
-  print("Pleas enter seven numbers");
- int num1=num.parse(stdin.readLineSync());
- int num2=num.parse(stdin.readLineSync());
- int num3=num.parse(stdin.readLineSync());
- int num4=num.parse(stdin.readLineSync());
- int num5=num.parse(stdin.readLineSync());
- int num6=num.parse(stdin.readLineSync());
- int num7=num.parse(stdin.readLineSync());
-
-List list1=[num1,num2,num3,num4,num5,num6,num7];
-
-  var maximumNumber =
-  list1.reduce((value, element) => value > element ? value : element);
-  print("MAX NUM IS =$maximumNumber");
-
-
-
-
-// Question:7
- print("Enter number to compute the sum of the digits of an integer.");
-
-
-  for (int i=1; i<=1; i ++)
-    {
-      int num1 = num.parse(stdin.readLineSync());
-      int c=(num1/10).floor();
-      int num3=num1%10;
-      print("The sum of the digits is:${c+num3}");
+  while (pass != password) {
+    print("Incorrect password");
+    print("Pleas try again");
+    int passes = num.parse(stdin.readLineSync());
+    while (passes == 1234) {
+      {pass=password;  print("Correct password") ; break;}}}}
 
 
 
 
 
 
-// Question:7
-func(){
+max()
+{
+  print("Please enter seven numbers");
+  int num1= num.parse(stdin.readLineSync());
+  int num2= num.parse(stdin.readLineSync());
+  int num3= num.parse(stdin.readLineSync());
+  int num4= num.parse(stdin.readLineSync());
+  int num5= num.parse(stdin.readLineSync());
+  int num6= num.parse(stdin.readLineSync());
+  int num7= num.parse(stdin.readLineSync());
+  List list1=[num1,num2,num3,num4,num5,num6,num7];
+
+  int max=list1.reduce((curr, next) => curr > next ?curr:next);
+   int position=list1.indexOf(max);
+position++;
+  print("MAX NUM IS =${list1.reduce((curr, next) => curr > next? curr: next)}"
+      " ND ITS POSITION IS =$position");
+
+}
+
+
+
+sum_of_the_digits()
+{
+  print("Please enter number to compute sum of the digits");
+
+
+  for (int i=1; i<=1; i++)
+    {int num1 = num.parse(stdin.readLineSync());
+    int c=(num1/10).floor();
+    int num3=num1%10;
+    print("The sum of the digits is:${c+num3}");
+
+    }
+
+}
+
+
+
+
+div_by_3_5()
+{
   List list1 = [];
   List list2 = [];
   List list3= [];
@@ -126,10 +195,45 @@ func(){
   print('Divided by 3: ${list1.join(', ')}');
   print('Divided by 5: ${list2.join(', ')}');
   print('Divided by 3 & 5: ${list3.join(', ')}');}
-  void main()
-  {
-   func();
-  }
+
+
+
+
+String abc()
+{
+  print("Pleas enter three number");
+  int num1 = num.parse(stdin.readLineSync());
+  int num2 = num.parse(stdin.readLineSync());
+  int num3 = num.parse(stdin.readLineSync());
+
+  bool abc=num3>num2;
+
+  if ((num2>num1 && num3>num2) || abc)
+   { print ("true");}
+
+
+}
+
+
+
+
+
+time()
+{
+  int value=num.parse(stdin.readLineSync());
+  int h, m, s;
+
+h = value ~/ 3600;
+
+m = ((value - h * 3600)) ~/ 60;
+
+s = value - (h * 3600) - (m * 60);
+
+String result = "$h:$m:$s";
+
+print(result);
+
+}
 
 
 
@@ -137,110 +241,212 @@ func(){
 
 
 
-// Question:11
-  print("Enter any word");
- String str1= stdin.readLineSync();
-
-  print (str1.toUpperCase());
-
-
-// Question:12
-print("Enter any word");
- String str1= stdin.readLineSync();
-
-  print (str1.toLowerCase());
+uppercase()
+{
+  print("Pleas enter word");
+  String str1 = stdin.readLineSync();
+  print(str1.toUpperCase());
+}
 
 
-// Question:13
-  String str1 = "Python Sample";
 
-  String str2=str1.substring(0 , 3);
-  
- print(str2);}
+lowercase()
+{
+  print("Pleas enter word");
+  String str1 = stdin.readLineSync();
+  print(str1.toLowerCase());
+}
 
 
-// Question:14
-  print("Enter two string");
+
+extract()
+{
+  print("Pleas enter word");
+ var str1 = stdin.readLineSync();
+int str3=str1.indexOf(" ");
+
+int str4=(str3/2).floor();
+
+print(str1.substring(0,str4));
+}
+
+
+
+
+
+
+two_string()
+{
   String str1 = "Python";
   String str2 = "Tutorial Sample";
-  String str3 = str2.replaceAll(" Sample", "Python");
-  String str4=str1+str3;
-  print(str4.trim());
+  String str3=str1+str2.substring(0,8)+str1;
 
-
-// Question:16
- print("Pleas enter number");
-  int num1 = num.parse(stdin.readLineSync());
-
-  if (num1 % 2 == 0) {
-    print("Not prime");
-  }
-  else if (num1 % 3 == 0) {
-    print("Not prime");
-  }
-  else if (num1 % 5 == 0) {
-    print("Not prime");
-  }
-  else {
-    print("prime");
-  }
+  print(str3);
+}
 
 
 
 
 
+guess_number()
+{
+  String emoji='\u2665';
+  for(int i=0; i<=2; i++)
+    {stdout.write(emoji);}
+    print("NOTE!!!  Type exit to quit the game");
+
+   print ('...................................');
+
+  final random = Random();
+  int randNumber = random.nextInt(100);
+  int attempt = 0;
+
+  while (true) {
+    attempt += 1;
+    String chosenNumber = stdin.readLineSync();
 
 
+    if (chosenNumber.toLowerCase() == "exit") {
+      print("\nBye");
+      break;}
 
-
-
-// Question:18
-  print("Enter number");
-  int num1=num.parse(stdin.readLineSync());
-  for (int i=0; i<=num1; i++)
-    {
-      print ("Number is : $i and cube of $i is :${i*i*i}");
+     else if (int.parse(chosenNumber)> 100) {
+      print("Please do not go over 100");
+      continue;
     }
+    print("Please enter number between 1 and 100");
+    int num1 =num.parse(stdin.readLineSync());
+    String str1=stdin.readLineSync();
+    str1.toLowerCase();
+
+    if (int.parse(chosenNumber) == randNumber) {
+      print("Bingo! You tried $attempt times\n");
+      continue;
+    } else if (int.parse(chosenNumber) > randNumber) {
+      print("You are higher");
+      continue;
+    } else {
+      print("You are lower");
+      continue;
+    }
+  }
+}
+
+
+
+is_prime()
+{
+  print("Please enter number to determine whether the number is prime or not.");
+  int num1 =num.parse(stdin.readLineSync());
+
+  if(num1%2==0 || num1%3==0 ||num1%5==0 )
+    {print("IS prime");}
+
+    else{print("IS not prime");}
+
+}
+
+cube_of_the_number()
+{
+  print("Please enter number");
+ int num1 =num.parse(stdin.readLineSync());
+ for(int i=1; i<=num1; i++)
+  {
+    print("Number is : $i and cube of $i is : ${i*i*i}");
+  }
+
+}
+
+
+
+
+
+odd_numbers()
+{
+  print("Enter n to display the n terms of odd natural number and their sum");
+
+  int n= num.parse(stdin.readLineSync());
+  int sum=0;
+  stdout.write("The odd numbers are : ");
+  for (int i=1; i<=n; i++) {
+    int a = (i * 2 )- 1;
+     sum=sum+a;
+
+    stdout.write("   $a" );
+
+  }
+  print("");
+ print("The Sum of odd Natural Number up to $n terms is:$sum");
+}
+
+
+
+
+Fibonacci()
+{
+  print("Enter the number of how many Fibonacci numbers to generate");
+  int num1 =num.parse(stdin.readLineSync());
+  int n1=0 , n2=1 , n3;
+  for (int count=1 ; count<=num1; count++)
+{
+  print(n1);
+  n3=n1+n2;
+  n1=n2;
+  n2=n3;
+}
+}
+
+
+pattern()
+{
+  int i=1;
+  int ii=0;
+  while(i!=0)
+    {
+      print(i);
+      i++;
+      stdout.write(i);
+      print(i);
+      i++;
+      stdout.write(i);
+      stdout.write(i);
+      print(i);
+      i++;
+      stdout.write(i);
+      stdout.write(i);
+      stdout.write(i);
+      print(i);
+      break;
+    }
+}
 
 
 
 
 
 
-// Question:20
-i=1;
-  print(i);
 
-  i=2;
-while(i==2)
-  {stdout.write(i);
- print(i);
-  break;}
-  i=3;
-  while(i==3)
-  {stdout.write(i);
-  stdout.write(i);
-  print(i);
-  break;}
+num_of_the_digits()
+{
+  print("Please enter number to  count the number of digits");
+  int num1 =num.parse(stdin.readLineSync());
+  if(num1<1000000)
+ { String num2=num1.toString();
+  print("Number of digits in the number: ${num2.length}");}
+else {print("Please enter number less than 1000000");}
 
-  i=4;
-  while(i==4)
-  {stdout.write(i);
-  stdout.write(i);
-  stdout.write(i);
-  print(i);
-  break;}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
-
-
-
-
-
-// Question:21
-  print("Enter positive number");
-  int num1 = num.parse(stdin.readLineSync());
-
-while(num1<1000000)
-  {String num2=num1.toString();
-  print("Number of digits in the number: ${num2.length}");
-break;}
