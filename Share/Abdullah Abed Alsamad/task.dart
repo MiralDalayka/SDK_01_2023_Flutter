@@ -62,3 +62,27 @@ void main() {
     }
   }
 }
+class vehicle {
+  String Name;
+  int age;
+  int Size;
+  String HairColor;
+
+  vehicle(String a) {
+
+  }
+
+  void Walk(Distance) {}
+
+  void Eat(Food) {}
+
+  void Speak(Language) {}
+}
+    class Person extends vehicle{
+      String  Name;
+      int age;
+      int Size;
+      String HairColor;
+
+      Person(this.Name, this.age, this.Size, this.HairColor,String a) : super(a);
+}

@@ -1,0 +1,107 @@
+// Question:1
+
+
+List a =[1,4,9,16,25,36,49,64,81,100];
+List b=[];
+print(a);
+print("Make a new list that has only the even element of this list");
+for (var e in a) {
+  if (e % 2 == 0) {
+   b.add(e);
+
+  }
+}
+print(b);
+
+
+
+
+
+// Question:2
+ List list1 = [5, 10 , 15, 20 , 25];
+  List i = [list1.first , list1.last];
+
+print(i);
+
+
+
+
+// Question:3
+  List list1 =<String>["M","na","i","Ke"];
+  List list2 = <String> ["y","me","s","lly"];
+  List list3=[];
+  for (int i = 0; i < list1.length; i++) {
+
+list3.add(list1[i]+list2[i]);
+  }
+
+  print(list3 );
+
+
+
+// Question:4
+
+  List numbers = [1, 2 , 3, 4 , 5,6,7];
+  List i= [];
+for (int m in numbers)
+  {
+    m=m*m;
+   i.add(m);
+
+  }
+print(i);
+
+
+
+
+
+// Question:5
+
+
+  List list1 = ["Hello ", "take "];
+  List list2 =["Dear", "Sir"];
+
+  List list4=["","","",""];
+
+for(int i =0; i<=4; i++)
+  {
+    list4[0]=list1[0]+list2[0];
+    list4[1]=list1[0]+list2[1];
+    list4[2]=list1[1]+list2[0];
+    list4[3]=list1[1]+list2[1];
+  }
+print (list4);
+
+
+
+
+
+// Question:6
+
+List list1 = <String>["Mike","","Emma","Kelly","","Brad"];
+
+  for (int i = 0; i < list1.length; i++) {
+    if (list1[i] == "") {
+      list1.removeWhere( (item) => item.isEmpty );
+
+    }
+  }
+
+  print(list1 );
+
+
+
+
+
+
+// Question:7
+List list1 = [5, 10, 15, 20, 25, 50, 20];
+
+  for (int i = 0; i < list1.length; i++) {
+    if (list1[i] == 20) {
+      list1[i] = 200;
+      break;
+    }
+  }
+
+  print(list1);
