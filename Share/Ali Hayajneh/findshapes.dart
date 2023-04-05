@@ -51,6 +51,7 @@ class Rectangle extends Shape {
       width = double.parse(stdin.readLineSync()!);
 
       print("THE AREA OF RECTANGLE IS :${width * length}");
+       print("THE CIRCUMFERENCE OF RECTANGLE IS :${(length+width)*2}");
     }
     catch(e){
 
@@ -62,9 +63,7 @@ class Rectangle extends Shape {
          selectClass();
     }
   }
-  void calculateCircumference(){
-    print("THE CIRCUMFERENCE OF RECTANGLE IS :${(length+width)*2}");
-  }
+  
 }
 
 
@@ -84,6 +83,7 @@ try {
   print("ENTER THE THIRD SIDE OF THE TRIANGLE:");
   thirdside = double.parse(stdin.readLineSync()!);
   print("THE AREA OF TRIANGLE IS :${base * height ~/ 2}");
+   print("THE CIRCUMFERENCE OF TRIANGLE IS :${height+base+thirdside}");
 }
 catch(e){
 
@@ -97,10 +97,7 @@ finally{
 
 }
 
-  void calculateCircumference(){
-    print("THE CIRCUMFERENCE OF TRIANGLE IS :${height+base+thirdside}");
-
-  }
+ 
 }
 
 class Cylinder extends Shape{
@@ -115,6 +112,7 @@ class Cylinder extends Shape{
       radius = double.parse(stdin.readLineSync()!);
 
       print("THE AREA OF CYLINDER IS :${2 * 3.14 * (radius + height)}");
+       print("THE CIRCUMFERENCE OF CYLINDER IS  UNDEFINED");
     }
     catch(e){
 
@@ -126,9 +124,7 @@ class Cylinder extends Shape{
       selectClass();
     }
   }
-  void calculateCircumference(){
-    print("THE CIRCUMFERENCE OF CYLINDER IS  UNDEFINED");
-  }
+
 }
 
 class Cone extends Shape {
@@ -143,6 +139,7 @@ class Cone extends Shape {
       double hypotenus = sqrt(pow(radius, 2) * (pow(height, 2)));
       print(
           "THE AREA OF CYLINDER IS : ${radius * 3.14 * (hypotenus + radius)}");
+        print("THE CIRCUMFERENCE OF CONE IS UNDEFINED");
     }
     catch(e){
 
@@ -155,9 +152,7 @@ class Cone extends Shape {
       selectClass();
     }
   }
-  void calculateCircumference(){
-    print("THE CIRCUMFERENCE OF CONE IS UNDEFINED");
-  }
+ 
 }
 
 class Wrapper {
