@@ -1,0 +1,110 @@
+import 'dart:io';
+import 'dart:math';
+import 'package:test/expect.dart';
+import 'batool.dart';
+
+class Employee
+{
+  String User_Name;
+  String Password;
+  int _Contact_Number;
+  String _Full_Name;
+  String _Address;
+  String _Hire_Date;
+  double Salary;
+  String Qualification;
+
+
+login() {
+  print(
+      "Please enter your user_name , password, contact_number, full_name,address, ");
+  User_Name = stdin.readLineSync();
+  Password = stdin.readLineSync();
+  _Contact_Number = num.parse(stdin.readLineSync());
+  _Full_Name = stdin.readLineSync();
+  _Address = stdin.readLineSync();
+}
+insert_car() {
+  String id;
+  String name;
+  String year;
+
+  print(
+      "Please enter id , name, year");
+
+  id = stdin.readLineSync();
+  name = stdin.readLineSync();
+  year = stdin.readLineSync();
+}
+  update_car() {
+
+  }
+
+  delete_car() {
+
+  }
+
+  logout() {
+    String UserName;
+    String Password2;
+
+    print(
+        "Please enter your user_name and password ");
+    UserName = stdin.readLineSync();
+    Password2 = stdin.readLineSync();
+
+    if (Password2 == Password && UserName == UserName) {
+      print("LogOut");
+    }
+    else {
+      print("Error in your name or password");
+    }
+  }
+}
+
+
+
+
+class Author
+{
+String _name;
+String _email;
+String _gender;
+
+Autho (name, email, gender)
+{
+  print(
+      "Please enter name , email, gender");
+
+  print(
+      "Note --> gender must be f or m ");
+
+  _name = stdin.readLineSync();
+ _email= stdin.readLineSync();
+ _gender = stdin.readLineSync();
+
+}
+
+
+void set email(em)
+{
+  _email=em;
+}
+String get getname
+{
+  return _name;
+}
+
+String get getemail
+{
+  return _email;
+}
+
+String to_string()
+{
+  if (_gender=='m' || _gender=='f')
+    {print("gender:$_gender");}
+  else {print("Erorr in gender");}
+}
+
+}
