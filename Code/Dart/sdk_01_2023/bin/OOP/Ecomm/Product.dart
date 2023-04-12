@@ -11,6 +11,15 @@ class Product {
     _id = staticId++; // _id = id;
   }
 
+  set name(String value) {
+    _name = value;
+  }
+
+
+  set price(double value) {
+    _price = value;
+  }
+
   String get name => _name;
 
   double get price => _price;
