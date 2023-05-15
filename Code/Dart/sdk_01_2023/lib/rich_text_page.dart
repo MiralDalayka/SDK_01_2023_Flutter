@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class RichTextClass extends StatefulWidget {
@@ -25,11 +26,26 @@ class _RichTextClassState extends State<RichTextClass> {
               text: TextSpan(
                   text: "***********",
                   style: TextStyle(fontSize: 50),
-                  children: const <TextSpan>[
+                  children: <TextSpan>[
                     TextSpan(
                         text: "^^^^^^",
-                        style: TextStyle(color: Colors.redAccent)),
-                    TextSpan(text: "*********")
+                        style: TextStyle(color: Colors.redAccent),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            //navigation
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                              "Clicked",
+                              style: TextStyle(fontSize: 30),
+                            )));
+                          }),
+                    TextSpan(
+                        text: "*********",
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Clicked 22")));
+                          })
                   ]),
               textAlign: TextAlign.center,
             ),
