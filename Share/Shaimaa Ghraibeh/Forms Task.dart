@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 class NewClass extends StatefulWidget {
   const NewClass({Key? key}) : super(key: key);
@@ -7,6 +9,7 @@ class NewClass extends StatefulWidget {
 }
 
 class _NewClassState extends State<NewClass> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +18,7 @@ class _NewClassState extends State<NewClass> {
         //),
         body: SingleChildScrollView(
           child:Form(
+            key: formKey,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -41,7 +45,7 @@ class _NewClassState extends State<NewClass> {
                           ),
                           borderRadius: BorderRadius.circular(20)
                         ),
-                        prefixIcon: Icon(Icons.account_circle,color: Colors.deepPurpleAccent.shade200,),
+                        prefixIcon: Icon(Icons.account_circle,color: Colors.amber,),
                         labelText: 'Email',
                         labelStyle: TextStyle(
                           color: Colors.grey,
@@ -52,6 +56,10 @@ class _NewClassState extends State<NewClass> {
                           fontSize: 12,
                         )
                         ),
+                      validator: (input){
+                        if(input!.isEmpty) return "Required";
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 20),
@@ -67,7 +75,7 @@ class _NewClassState extends State<NewClass> {
                             ),
                             borderRadius: BorderRadius.circular(20)
                         ),
-                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.deepPurpleAccent.shade200,),
+                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amber,),
 
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -82,21 +90,69 @@ class _NewClassState extends State<NewClass> {
                             fontSize: 15,
                           ),
                       ),
+                      validator: (pass){
+                        if(pass!.isEmpty){
+                          return "Required";
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 20),
 
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(onPressed: () { ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Sucssful Log In',style: TextStyle(fontSize: 15),)),) ;
-                    }, child: Text('Log In'),
+                    child: TextFormField(
+                      decoration:  InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.deepPurpleAccent,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amber,),
+
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.deepPurpleAccent,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        labelText: 'Confirm Password',
+                        labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      validator: (pass){
+                        if(pass!.isEmpty){
+                          return "Required";
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(onPressed: (){
+                      if(formKey.currentState!.validate()){
+                        log("Data Is Valid");
+                      }
+                      else{
+                        log("Data Isn't Valid");
+                      }
+                    },
+                      child: Text('Sign Up'),
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.deepPurpleAccent,
+                          backgroundColor: Colors.amber,
                           textStyle: TextStyle(
                             fontSize: 20,
                           )
                       ),
-
                     ),
                   ),
                    ],
