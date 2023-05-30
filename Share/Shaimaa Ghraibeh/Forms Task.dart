@@ -45,7 +45,7 @@ class _NewClassState extends State<NewClass> {
                           ),
                           borderRadius: BorderRadius.circular(20)
                         ),
-                        prefixIcon: Icon(Icons.account_circle,color: Colors.amber,),
+                        prefixIcon: Icon(Icons.account_circle,color: Colors.amberAccent,),
                         labelText: 'Email',
                         labelStyle: TextStyle(
                           color: Colors.grey,
@@ -75,7 +75,7 @@ class _NewClassState extends State<NewClass> {
                             ),
                             borderRadius: BorderRadius.circular(20)
                         ),
-                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amber,),
+                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amberAccent,),
 
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -111,7 +111,7 @@ class _NewClassState extends State<NewClass> {
                             ),
                             borderRadius: BorderRadius.circular(20)
                         ),
-                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amber,),
+                        prefixIcon: Icon(IconData(0xf11a, fontFamily: 'MaterialIcons'),color: Colors.amberAccent,),
 
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -148,7 +148,7 @@ class _NewClassState extends State<NewClass> {
                     },
                       child: Text('Sign Up'),
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.amber,
+                          backgroundColor: Colors.amberAccent,
                           textStyle: TextStyle(
                             fontSize: 20,
                           )
