@@ -1,0 +1,76 @@
+ SingleChildScrollView(
+        scrollDirection:Axis.horizontal ,
+
+         child:Row(children: [Container(
+           color: Colors.pink,
+           margin: EdgeInsets.all(20),
+           padding: EdgeInsets.all(20),
+           width: 200,
+           height: 200,
+         ),
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+           Container(
+             color: Colors.pink,
+             margin: EdgeInsets.all(20),
+             padding: EdgeInsets.all(20),
+             width: 200,
+             height: 200,
+           ),
+
+
+         ],)
+
+
+      )
+
