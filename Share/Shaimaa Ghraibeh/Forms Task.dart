@@ -9,7 +9,9 @@ class NewClass extends StatefulWidget {
 }
 
 class _NewClassState extends State<NewClass> {
+  double sizeBox = 20;
   final formKey = GlobalKey<FormState>();
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,13 +58,20 @@ class _NewClassState extends State<NewClass> {
                           fontSize: 12,
                         )
                         ),
-                      validator: (input){
-                        if(input!.isEmpty) return "Required";
+                      validator: (email){
+                        if(email!.isEmpty) {
+                          return "Required";
+                        }
+                       if(!emailValidation(email)){
+                         return 'Email Is Not Valid';
+                       }
                         return null;
                       },
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox (
+                    height: sizeBox,
+                  ),
 
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -89,13 +98,30 @@ class _NewClassState extends State<NewClass> {
                               color: Colors.grey,
                             fontSize: 15,
                           ),
-                      ),
+                        suffix:isVisible? InkWell(child:
+                        Icon(Icons.visibility_off_outlined,color: Colors.deepPurpleAccent,),onTap:(){
+                          setState(() {
+                            isVisible=!isVisible;
+                          });
+                        },
+                        ):
+                        InkWell(child:
+                        Icon(Icons.visibility_outlined,color: Colors.deepPurpleAccent,),onTap:(){
+                          setState(() {
+                            isVisible=!isVisible;
+                          });
+                        },
+                        )),
                       validator: (pass){
                         if(pass!.isEmpty){
                           return "Required";
                         }
+                        if(pass!.length>8){
+                          return "Minimum 8 Characters";
+                        }
                         return null;
                       },
+                      obscureText: isVisible,
                     ),
                   ),
                   SizedBox(height: 20),
@@ -131,6 +157,7 @@ class _NewClassState extends State<NewClass> {
                           return "Required";
                         }
                         return null;
+
                       },
                     ),
                   ),
@@ -145,6 +172,7 @@ class _NewClassState extends State<NewClass> {
                       else{
                         log("Data Isn't Valid");
                       }
+
                     },
                       child: Text('Sign Up'),
                       style: TextButton.styleFrom(
@@ -161,5 +189,8 @@ class _NewClassState extends State<NewClass> {
           ),
         )
     );
+  }
+  bool emailValidation(String email){
+    return RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(email);
   }
 }
