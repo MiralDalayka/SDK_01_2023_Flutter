@@ -1,0 +1,334 @@
+import 'package:flutter/material.dart';
+
+class FirstApp extends StatefulWidget {
+  const FirstApp({Key? key}) : super(key: key);
+
+
+  @override
+  State<FirstApp> createState() => _FirstAppState();
+}
+
+class _FirstAppState extends State<FirstApp> {
+
+  bool notify=false;
+  int c=0;
+  List<Widget> widgetpage=[Text("OK") , Text("YES")];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar
+        (title: const Text("ROSES" ),
+        leading: const Icon(Icons.favorite_sharp),
+        backgroundColor: Colors.grey,
+
+      ),
+
+
+
+      bottomNavigationBar:BottomNavigationBar(
+        currentIndex: c,
+        backgroundColor: Colors.grey,
+        iconSize: 20,
+       fixedColor: Colors.pink,
+       selectedIconTheme: IconThemeData(color: Colors.white),
+        onTap: (index){
+          setState(() {
+            c=index;
+
+          });
+        },
+
+        items:[
+        BottomNavigationBarItem( label: "Call", icon: Icon(Icons.add_call) , backgroundColor: Colors.white,),
+        BottomNavigationBarItem( label: "Search", icon: Icon(Icons.search), backgroundColor: Colors.white,)
+
+      ],),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        body:SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: (   Column(
+          children: [
+        Row(children: const [
+        Icon(Icons.favorite_rounded , color: Colors.pink, size: 25, ),
+
+            Text("Thank you for visiting our site" , style: TextStyle(
+            wordSpacing: 2,
+            letterSpacing: 3,
+            fontSize: 15,
+            fontStyle: FontStyle.italic,
+            textBaseline: TextBaseline.ideographic,
+            fontWeight: FontWeight.bold,),),
+
+
+      Icon(Icons.favorite_rounded , color: Colors.pink, size: 25, ),
+      ],),
+
+
+
+
+
+
+            Container(
+              padding: const EdgeInsets.all(15),
+              child:  Row(children: const [
+                Icon(Icons.circle , size: 18, color: Colors.black,),
+
+                Text("Some types of roses on our site:" , style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,),),
+
+
+                Icon(Icons.tag_faces_rounded , size: 20, color: Colors.black,),
+                Icon(Icons.local_florist , size: 20, color: Colors.pink,),],),),
+
+
+
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+
+              child: Row(children: [
+                Container(
+
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f1.jpeg")),),),
+
+
+
+
+                Container(
+
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f2.jpeg")),),),
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f3.jpeg")),),),
+
+
+                Container(
+
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f4.jpeg")),),),
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f5.jpeg")),),),
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f6.jpeg")),),),
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f7.jpeg")),),),
+
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f8.jpeg")),),),
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f9.jpeg")),),),
+
+
+
+                Container(
+                  width: 160,
+                  height: 160,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(image: AssetImage("lib/assets/f10.jpeg")),),),
+
+              ],),),
+
+
+
+
+            Container(
+
+              padding: const EdgeInsets.all(20),
+              child:
+              Row(
+                children: [
+                  const Icon(Icons.local_florist_rounded , size: 26, color: Colors.pink,),
+
+                  const Text("Do you love it ?" , style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,),),
+
+
+                  Container(
+
+                      padding: const EdgeInsets.all(15),
+                      child:   ElevatedButton(
+                        style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(Colors.pink)),
+                        onPressed: (){
+                          showDialog(context: context, builder:(context)
+                          {
+                            return const AlertDialog(
+                              title: Text("Thank You"),
+
+                              titleTextStyle: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic),
+
+                              content: Icon(Icons.favorite_sharp , color: Colors.red,),);});},
+
+
+                        child: const Text("Yes")  , )),
+
+
+
+
+
+
+
+
+                ],),),
+
+            Row(
+              children: [
+                const Icon(Icons.local_florist_rounded , size: 26, color: Colors.pink,),
+                const Text("Do you want to activate notifications ?" , style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,),),
+
+
+                Switch(
+                  activeColor: Colors.pink,
+
+                  value: notify, onChanged: (val) {
+                  setState(() {
+                    notify=val;
+                  });
+                },),],),
+
+
+
+
+
+
+
+          ],
+
+
+        )
+        ),)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    );
+
+  }
+}
+
