@@ -61,7 +61,7 @@ class _Form1State extends State<Form1> {
                         }
 
                         {
-                          if (emailvaliedation(email)) return 'wrong email';
+                          if (!emailvaliedation(email)) return 'wrong email';
                         }
                         return null;
                       },
@@ -71,7 +71,12 @@ class _Form1State extends State<Form1> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       validator: (pass) {
-                        if (pass!.isEmpty) return "required";
+                        if (pass!.isEmpty) return "required";{
+
+                        }
+                        if (! passvaliedation(pass)) return 'not valied password';{
+
+                        }
                         return null;
                       },
                       decoration: InputDecoration(
@@ -150,5 +155,10 @@ class _Form1State extends State<Form1> {
     return RegExp(
             r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
         .hasMatch(email);
+  }
+
+  bool passvaliedation(String pass) {
+    return RegExp(r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$')
+        .hasMatch(pass);
   }
 }
