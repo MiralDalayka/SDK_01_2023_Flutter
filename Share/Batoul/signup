@@ -1,0 +1,242 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
+import 'package:untitled/login.dart';
+
+class FirstApp extends StatefulWidget {
+  const FirstApp({Key? key}) : super(key: key);
+  @override
+  State<FirstApp> createState() => _FirstAppState();
+}
+
+class _FirstAppState extends State<FirstApp> {
+
+  var username;
+  var pass;
+  @override
+  Widget build(BuildContext context)
+  {
+    GlobalKey<FormState> formstate=new GlobalKey<FormState>();
+    send(){
+      var formdata=formstate.currentState;
+      if (formdata!.validate())
+        {formdata.save();
+          print("valid");
+        }
+      else {print("not valid");}
+
+    }
+
+    return Scaffold(
+      appBar: AppBar(title: const Text("Sign up"),),
+
+        body:SingleChildScrollView(
+          child: Column(children: [
+              Column(children: [
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    alignment: Alignment.center,
+                    child: const Text("Sign up" , style:
+                    TextStyle(
+                      color: Color.fromARGB(123, 140, 10, 125),
+                      fontFamily: "Flu",
+                      fontSize: 30,
+                      fontStyle: FontStyle.italic,),),),
+
+
+                  Container(
+
+                    alignment: Alignment.center,
+                    child: const Text("Create an account, It's free", style:
+                    TextStyle(
+                        color: Colors.grey,
+                        fontFamily: "Flu1"),),),
+
+                  Column(children: [
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: const Text("Username" , style:
+                          TextStyle(
+                            color: Colors.black,
+                            fontFamily: "Goch",
+                            fontStyle: FontStyle.italic),),),
+
+
+                        Form(
+                            autovalidateMode: AutovalidateMode.always,
+                            key: formstate,
+
+                            child: TextFormField(
+                              onSaved: (text){
+                                username=text;
+                              },
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black))),)),
+
+                        const SizedBox(height: 20,),
+
+                        Container(
+
+                          alignment: Alignment.topLeft,
+                          child: const Text("Email" , style:
+                          TextStyle(
+                              color: Colors.black,
+                              fontFamily: "Goch",
+                              fontStyle: FontStyle.italic),),),
+
+
+                        Form(child: TextFormField(
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black)),))),
+
+
+                        const SizedBox(height: 20,),
+
+
+
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: const Text("Password" , style:
+                          TextStyle(
+                              color: Colors.black,
+                              fontFamily: "Goch",
+                              fontStyle: FontStyle.italic),),),
+
+                        Form(child: TextFormField(
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black)),))),
+
+
+                        const SizedBox(height: 20,),
+
+
+                        Container(
+
+                          alignment: Alignment.topLeft,
+                          child: const Text("Confirm Password" , style:
+                          TextStyle(
+                              color: Colors.black,
+                              fontFamily: "Goch",
+                              fontStyle: FontStyle.italic),),),
+
+                        Form(child: TextFormField(
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black)),))),
+
+                        const SizedBox(height: 20,),
+
+
+                        Container(
+
+                          alignment: Alignment.topLeft,
+                          child: const Text("Phone Number" , style:
+                          TextStyle(
+                              color: Colors.black,
+                              fontFamily: "Goch",
+                              fontStyle: FontStyle.italic),),),
+
+                        Form(child: TextFormField(
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black)),))),
+
+                        const SizedBox(height: 20,),
+
+
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: const Text("City" , style:
+                          TextStyle(
+                              color: Colors.black,
+                              fontFamily: "Goch",
+                              fontStyle: FontStyle.italic),),),
+
+                        Form(child: TextFormField(
+                            validator:(text){
+                              if(text!.isEmpty)
+                                {return "لا يمكن ان يكون الحقل فارغ";
+
+                                }
+                              return null;
+
+                            },
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),),
+
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderSide: const BorderSide(color: Colors.black)),))),
+
+                        const SizedBox(height: 20,),
+
+                     Center(child: ElevatedButton(onPressed: (){
+                       send();
+
+                     } ,
+                       style: const ButtonStyle(
+                           backgroundColor: MaterialStatePropertyAll(Colors.black),
+                           fixedSize: MaterialStatePropertyAll(Size(200, 40))),
+
+                       child: const Text("Sign Up" , style:
+                       TextStyle(
+                       color: Colors.white,
+                       fontStyle: FontStyle.italic,
+                       fontFamily: "Goch",
+                       fontSize: 20,),) ,),),
+
+
+                        const SizedBox(height: 4,),
+                        Column(children: [
+                          InkWell(child: const Text("Already have an account? Login"),
+                          onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                              return const login();}));},)
+
+                        ],)])],)],),)
+
+    );}}
