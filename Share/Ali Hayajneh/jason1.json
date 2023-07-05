@@ -1,0 +1,32 @@
+
+[
+
+{
+    "id":"1",
+    "name":"samer",
+    "city":"irbid",
+    "age" : 20,
+    "gender":"male",
+    "career":"retired"
+
+},
+
+{
+    "id":"2",
+    "name":"ALI",
+    "city":"AMMAN",
+    "age" : 40,
+    "gender":"MALE",
+    "career":"POLICE"
+
+},
+{
+    "id":"3",
+    "name":"waleed",
+    "city":"zarqa",
+    "age" : 80,
+    "gender":"MALE",
+    "career":"carpenter"
+
+}
+]
