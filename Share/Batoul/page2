@@ -1,0 +1,226 @@
+import 'package:flutter/material.dart';
+// import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+
+import 'dropdown.dart';
+
+class Page2 extends StatefulWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  State<Page2> createState() => _Page2State();
+}
+
+class _Page2State extends State<Page2> {
+
+  List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+
+
+
+
+
+
+
+  // Color color=Colors.black;
+  @override
+  Widget build(BuildContext context) {
+
+
+    String dropdownValue = list.first;
+
+
+
+    Widget build(BuildContext context) {
+      return DropdownButton<String>(
+        value: dropdownValue,
+        icon: const Icon(Icons.arrow_downward),
+        elevation: 16,
+        style: const TextStyle(color: Colors.deepPurple),
+        underline: Container(
+          height: 2,
+          color: Colors.deepPurpleAccent,
+        ),
+        onChanged: (String? value) {
+          // This is called when the user selects an item.
+          setState(() {
+            dropdownValue = value!;
+          });
+        },
+        items: list.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      );
+    }
+
+
+
+
+
+
+
+    return Scaffold(
+
+
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+
+      floatingActionButton:FloatingActionButton.extended(
+        onPressed: () {
+
+        },
+
+        icon:const Icon(Icons.star),
+        label:  Container(
+          color: Colors.white,
+        ) ,
+
+      ),
+
+
+
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+
+        child: Column(
+          children: [
+            SizedBox(
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width,
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUzb__vTGwdT2XPp_z76ge8FzCQrh1iHc1Q&usqp=CAU',
+                fit: BoxFit.fill,),
+            ),
+
+            const SizedBox(height: 15,),
+
+            Container(
+              alignment: Alignment.topLeft,
+
+              child: const Text("Nike Dri-FIT Long Sleeve", style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+
+
+                  fontWeight: FontWeight.bold
+              ),),
+            ),
+
+            const SizedBox(height: 10,),
+
+
+
+             Row(
+
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+               children: [
+
+                 const Padding(padding: EdgeInsets.only(right: 5)),
+                 Container(alignment: Alignment.topLeft,
+                     child: const DropdownButtonExample()),
+               ],
+             ),
+
+
+
+
+
+
+
+            //
+            // Container(
+            //
+            //
+            //   decoration: BoxDecoration(
+            //     shape: BoxShape.circle,
+            //     color: Colors.blue,
+            //   ),
+            //
+            //   width: 120,
+            //   height: 120,
+            // ),
+            //
+            // const SizedBox(height: 32,),
+            //
+            //
+            // ElevatedButton(
+            //     style: ElevatedButton.styleFrom(
+            //       padding: EdgeInsets.symmetric(horizontal: 24),
+            //     ),
+            //     child: Text("Pick colors"),
+            //     onPressed: ()=>pickColor(context)),
+
+
+          ],
+        ),
+      ),
+    );
+  }
+
+//
+// Widget buildColorPick()=>ColorPicker(
+//   pickerColor: Colors.red, //default color
+//     onColorChanged:(color)
+//     {
+//       setState(() {
+//         this.color=color=color;
+//       });
+//     }
+// );
+
+
+//     BlockPicker
+// (
+//     pickerColor:color,
+//
+//   avaliableColors:[
+//     Colors.red,
+//     Colors.accents,
+//     Colors.green,
+//     Colors.greenAccent,
+//     Colors.pink,
+//     Colors.primaries,
+//   ],
+//   onColorChanged:(color)
+//   {
+//     setState(() {
+//       this.color=color=color;
+//     });
+//   }
+//     );
+
+
+//
+// void pickColor (BuildContext context )=>showDialog(context: context, builder: (context)=>AlertDialog(
+//   title: Text("Pick your color"),
+//   content: Column(
+//     mainAxisSize: MainAxisSize.min,
+//     children: [
+//       buildColorPick(),
+//       TextButton(
+//         onPressed: () { setState(() {
+//
+//          Navigator.of(context).pop();
+//         }); },
+//         child: Text("Select"),
+//
+//       ),
+//     ],
+//   ),
+//
+// ));
+
+
+
+}
+
+
+
+
+
+
+
+
