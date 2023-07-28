@@ -62,11 +62,12 @@ class _Page3State extends State<Page3> {
 
 
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
+      
 
         floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
 
@@ -123,7 +124,7 @@ class _Page3State extends State<Page3> {
                             width: 150,
                             fit: BoxFit.cover,
                           ),
-                          const SizedBox(height: 8),
+                          const SizedBox(height: 12),
                           Text(
                             product["name"],
                             style: const TextStyle(
@@ -146,7 +147,7 @@ class _Page3State extends State<Page3> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
           ],
 
