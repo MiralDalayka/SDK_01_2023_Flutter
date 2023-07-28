@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../Project/descripton.dart';
 import '../Project/device.dart';
 import '../Project/gadgets.dart';
 import '../Project/games.dart';
 import '../Project/men.dart';
-import '../Project/seeAll.dart';
 import '../Project/women.dart';
 
 class Page1 extends StatefulWidget {
@@ -68,6 +65,7 @@ class _Page1State extends State<Page1> {
 
 
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
 
@@ -79,6 +77,8 @@ class _Page1State extends State<Page1> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+
             Container(
               padding: const EdgeInsets.all(12),
               child: Form(
@@ -103,9 +103,14 @@ class _Page1State extends State<Page1> {
                 ),
               ),
             ),
+
+
+
+
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
+
             Container(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -115,69 +120,68 @@ class _Page1State extends State<Page1> {
                   textBaseline: TextBaseline.ideographic,
                   fontStyle: FontStyle.italic,
                   fontSize: 30,
-                  fontFamily: "Font_2",
+                  fontWeight: FontWeight.bold
+
                 ),
               ),
             ),
+
+
+
+            const SizedBox(
+              height: 50,
+            ),
+
+
+
+
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   InkWell(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Men(),));
-                    },
+                    onTap: () { },
+
                     child: SizedBox(
                       width: 150,
                       height: 100,
-                      child: Image.asset('lib/Project/assets/images/men.jpeg'),),
+                      child: Image.network('data:image/jpeg;base64,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')),
                   ),
 
                   InkWell(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Women(),));
-                    },
+                    onTap: () {},
+                    
                     child: SizedBox(
-                      width: 75,
-                      height: 60,
-                      child: Image.asset('lib/Project/assets/images/women.jpeg'),),
+                      width: 150,
+                      height: 100,
+                      child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNpqUt-_ttig0QcBwlgliPLpVVz1Nca0CTDw&usqp=CAU'),),
                   ),
 
 
                   InkWell(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Device(),));
-                    },
+                    onTap: () {},
+
                     child: SizedBox(
                       width: 150,
                       height: 100,
-                      child: Image.asset('lib/Project/assets/images/device.jpeg'),),
+                      child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF-FBzXg8E_fPFC38XJ9z_1qq7Ds0aJ1cMOg&usqp=CAU'),),
                   ),
 
                   InkWell(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Gadgets(),));
-                    },
+                    onTap: () {},
                     child: SizedBox(
                       width: 150,
                       height: 100,
-                      child: Image.asset('lib/Project/assets/images/gadgets.jpeg'),),
-                  ),
+                      child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlz1pz_vkClh6lPryr5XnvB3gehXzl9tPKg&usqp=CAU' ))),
 
 
                   InkWell(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Gaming(),));
-                    },
+                    onTap: () {},
+
                     child: SizedBox(
                       width: 150,
                       height: 100,
-                      child: Image.asset('lib/Project/assets/images/games.jpeg'),),
+                      child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC-1NDqOUC6LxJfYAEj8MRZ6hBSNxvfvbIlQ&usqp=CAU'),),
                   ),
 
                 ],
@@ -185,9 +189,15 @@ class _Page1State extends State<Page1> {
 
 
             ),
+
+
+
+
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -199,8 +209,9 @@ class _Page1State extends State<Page1> {
                       color: Colors.black,
                       textBaseline: TextBaseline.ideographic,
                       fontStyle: FontStyle.italic,
-                      fontSize: 25,
-                      fontFamily: "Font_2",
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+
                     ),
                   ),
                 ),
@@ -211,8 +222,9 @@ class _Page1State extends State<Page1> {
                       color: Colors.black,
                       textBaseline: TextBaseline.ideographic,
                       fontStyle: FontStyle.italic,
-                      fontSize: 18,
-                      fontFamily: "Font_2",
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+
                     ),
                   ),
                   onTap: () {},
@@ -222,7 +234,7 @@ class _Page1State extends State<Page1> {
 
 
             const SizedBox(
-              height: 25,
+              height: 50,
             ),
 
 
@@ -231,9 +243,9 @@ class _Page1State extends State<Page1> {
               child: Row(
                 children: products.map((product) {
                   return SizedBox(
-                    width: 150,
+                    width: 200,
                     child: Card(
-                      color: Colors.grey[800],
+                      color: Colors.grey[50],
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -265,37 +277,47 @@ class _Page1State extends State<Page1> {
                 }).toList(),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20,),
+
           ],
+
 
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (int index) {
 
-          },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Shopping',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Account',
-          ),
-        ],
-      ),
+
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 0,
+            onTap: (int index) {},
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Shopping',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle),
+                label: 'Account',
+    ),
+
+
+
+
+
+
+
+
+
+
+
+  ] )
+     
     );
 
   }
 
 }
-
 
