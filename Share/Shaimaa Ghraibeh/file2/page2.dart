@@ -8,62 +8,88 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
+
   Color? selectedColor;
   String? selectedSize;
 
   @override
+
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
-      floatingActionButton: Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 180),
-                child: FloatingActionButton.extended(
-                  backgroundColor: Colors.white,
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.arrow_back_ios_outlined,
-                    color: Colors.black87,
-                  ),
-                  label: Container(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 300,
-              top: 10,
-            ),
-            child: FloatingActionButton.extended(
-              backgroundColor: Colors.white,
-              onPressed: () {},
-              icon: const Icon(
-                Icons.star_border,
-                color: Colors.black87,
-              ),
-              label: Container(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
-      ),
+
       body: SingleChildScrollView(
+
         scrollDirection: Axis.vertical,
-        child: Column(
+
+        child:
+        Column(
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUzb__vTGwdT2XPp_z76ge8FzCQrh1iHc1Q&usqp=CAU',
-                fit: BoxFit.fill,
-              ),
+            Stack(
+              children:<Widget> [
+
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.network(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUzb__vTGwdT2XPp_z76ge8FzCQrh1iHc1Q&usqp=CAU',
+                    fit: BoxFit.fill,
+                  ),
+
+
+
+
+                ),
+                Row(
+
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children:   [
+
+
+                    const Padding(padding: EdgeInsets.only(top: 300)),
+
+
+
+                    InkWell(
+                      child:  const Icon(
+                        Icons.arrow_back_ios_outlined,
+                        color: Colors.black87,
+                      ),
+
+                      onTap: (){},
+                    ),
+
+
+                    const SizedBox(
+                      width: 320,
+                    ),
+
+
+                    InkWell(
+                      child:  const Card(
+                        shape: StadiumBorder(),
+                        color: Colors.white,
+                        child:   Icon(
+                          Icons.star_border,
+                          color: Colors.black87,
+                        ),
+                      ),
+
+                      onTap:(){},
+                    )
+
+                  ],
+                )
+              ],
+
+
             ),
+
+
+
+
             const SizedBox(height: 25,),
             Container(
               alignment: Alignment.topLeft,
@@ -243,7 +269,7 @@ class _Page2State extends State<Page2> {
               ],
             ),
             Wrap(
-              children: [
+              children: const [
                 Padding(padding: EdgeInsets.all(15)),
                 Text(
                   "Nike Dri_FIT is a polyester fabric designed to help you keep dry so you can more comfortably harder, longer. ",
@@ -269,7 +295,7 @@ class _Page2State extends State<Page2> {
         Padding(
           padding: EdgeInsets.only(right: 50, top: 10,),
           child: Column(
-            children: [
+            children: const [
               Text(
                 "Price",
                 style: TextStyle(
@@ -306,7 +332,29 @@ class _Page2State extends State<Page2> {
           ),
         ),
       ],
+
+
     );
+
+
+
+
+
+
+
+    // scrollDirection: Axis.vertical,
+    //
+    //   child: Column(
+    //     children: [
+    //       SizedBox(
+    //         width: MediaQuery.of(context).size.width,
+    //         child: Image.network(
+    //           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUzb__vTGwdT2XPp_z76ge8FzCQrh1iHc1Q&usqp=CAU',
+    //           fit: BoxFit.fill,
+    //         ),
+    //       ),
+    //
+
   }
 
   void _onColorSelected(Color color) {
