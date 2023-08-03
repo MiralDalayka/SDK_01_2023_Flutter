@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
           duration: Duration(milliseconds: 200),
           transform: transform,
 
-          child: Widget. ,
+          child: Widget.child ,
 
 
         ));
