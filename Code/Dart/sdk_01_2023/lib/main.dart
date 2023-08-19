@@ -7,9 +7,27 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Prefs.init();
-  runApp(const MyApp());
+  runApp(const FireStoreCloudApp());
 }
 
+
+class FireStoreCloudApp extends StatelessWidget {
+  const FireStoreCloudApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: firestoreProvider.PostProvider())
+      ],
+      child: MaterialApp(
+        onGenerateRoute: firestore.MyRouter.generateRoute,
+        initialRoute: firestoreRoute.splashRote,
+//       home: AddEditPostScreen(),
+      ),
+    );
+  }
+}
 class RealTimeDatabaseApp extends StatelessWidget {
   const RealTimeDatabaseApp({Key? key}) : super(key: key);
 
