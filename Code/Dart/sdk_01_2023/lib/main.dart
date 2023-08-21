@@ -10,7 +10,29 @@ void main() async {
   runApp(const FireStoreCloudApp());
 }
 
+class Auth1 extends StatelessWidget {
+  const Auth1({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateRoute: MyRouter.generateRoute,
+      initialRoute: splashRoute,
+    );
+  }
+}
+
+class Auth2 extends StatelessWidget {
+  const Auth2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateRoute: MyRouterAuthEx2.generateRoute,
+      initialRoute: signIn,
+    );
+  }
+}
 class FireStoreCloudApp extends StatelessWidget {
   const FireStoreCloudApp({Key? key}) : super(key: key);
 
