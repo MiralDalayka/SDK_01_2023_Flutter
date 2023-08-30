@@ -1,0 +1,174 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:get/get.dart';
+import 'package:uuid/uuid.dart';
+
+class UserAuth {
+  Future<String> register(
+      {required String email, required String password}) async {
+    try {
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      )
+          .whenComplete(
+        () {
+          print(
+              "==============================================================");
+        },
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        return e.code;
+      } else if (e.code == 'email-already-in-use') {
+        return e.code;
+      }
+    } catch (e) {
+      return e.toString();
+    }
+
+    return "Congragulation you are successfully registered";
+  }
+
+  Future<String> signIn(String email, String password) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return e.code;
+      } else if (e.code == 'wrong-password') {
+        return e.code;
+      }
+    } catch (e) {
+      return e.toString();
+    }
+
+    return "";
+  }
+
+  Future<void> setUsersData(
+      {required List<String> list,
+      required String clientId,
+      required String address,
+      required String tele,
+      required bool ban,
+      required String name}) async {
+    await FirebaseFirestore.instance.collection("clients").add({
+      "fav": list,
+      "clientid": clientId,
+      "address": address,
+      "tele": tele,
+      "ban": ban,
+      "registration date": DateTime.now(),
+      "name": name
+    });
+  }
+
+  Future<bool> Duplicateitem(String item, String element) async {
+    CollectionReference ref = FirebaseFirestore.instance.collection("clients");
+    bool? result;
+    await ref.where(item, isEqualTo: element).get().then((value) {
+      result = value.docs.isEmpty;
+      //for (var x in value.docs) {
+      // Map<String, dynamic> mp = x.data() as Map<String, dynamic>;
+      // print(mp["email"]);
+      //   }
+    });
+
+    return result!;
+  }
+
+  Future<String> Duplicateitems(String item) async {
+    CollectionReference ref = FirebaseFirestore.instance.collection("clients");
+
+    await ref.get().then((value) {
+      for (var x in value.docs) {
+        //Map<String, dynamic> mp = x.data() as Map<String, dynamic>;
+        print((x.data()! as Map)["fav"][0]);
+      }
+    });
+//await ref.doc("PsDCQ6SmgBaaF1Wxfip5").get().then((value) {
+
+//print(value["fav"][0]);
+    return "result";
+  }
+
+  void verifyPhoneNumber(String phoneNumber) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await FirebaseAuth.instance.verifyPhoneNumber(
+      phoneNumber: phoneNumber,
+      verificationCompleted: (PhoneAuthCredential credential) {},
+      verificationFailed: (FirebaseAuthException e) {
+        if (e.code == 'invalid-phone-number') {
+          print('The provided phone number is not valid.');
+        }
+      },
+      codeSent: (String verificationId, int? resendToken) async {
+        String smsCode = 'xxxx';
+
+        // Create a PhoneAuthCredential with the code
+        PhoneAuthCredential credential = PhoneAuthProvider.credential(
+            verificationId: verificationId, smsCode: smsCode);
+        print(credential.smsCode);
+
+        // Sign the user in (or link) with the credential
+        await auth.signInWithCredential(credential);
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
+  }
+
+  Future<void> deletedata() async {
+    QuerySnapshot snapshot = await FirebaseFirestore.instance
+        .collection('clients')
+        .where("clientid", isEqualTo: "4DeurvaIStWqfba0bY4V5z")
+        .get();
+
+    // for (var document in snapshot.docs[0]) {
+
+    // DocumentReference ref = FirebaseFirestore.instance
+    // .collection("clients")
+    // .doc(snapshot.docs[0].id);
+
+    /// ref.update({"address": "irbid"});
+
+//}
+
+    //  DocumentReference ref = FirebaseFirestore.instance
+    //.collection("clients")
+    //.doc("pYw7gBKoeAcR9cjSAYxf");
+
+    //  ref.update({"address": "amman"});
+
+    /// DocumentReference ref = FirebaseFirestore.instance
+    //   .collection("clients")
+    // .doc("pYw7gBKoeAcR9cjSAYxf");
+
+    /// ref.update({"address": "amman"});
+
+    // ref.update({
+    //  "address": FieldValue.arrayUnion(['hi'] )
+    // });
+
+    //FirebaseFirestore.instance.runTransaction((transaction) async =>
+    /// transaction.delete(ref));
+    // await FirebaseFirestore.instance
+    // .collection('info')
+    //.doc('DudyRar2DH5O19pZoPrP')
+    // .delete();
+
+    //QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+    // .collection("clients")
+    // .where('address', isEqualTo: 'amman')
+    // .get();
+
+    // for (var doc in querySnapshot.docs) {
+    //doc.reference.delete();
+    // }
+  }
+}
