@@ -20,6 +20,31 @@ class _SignUpState extends State<SignUp> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   final FirebaseAuth credential= FirebaseAuth.instance;
+  void addAccount(string email,string pass)async {
+
+                            try {
+                               await credential.createUserWithEmailAndPassword(
+                                email: email,
+                                password: pass,
+                              ).whenComplete((){
+log(email.text);
+                                 
+                                log("hdj");
+                                Navigator.of(context).pushReplacementNamed("homepage");
+                              });
+                              log("asd");
+
+                            } on FirebaseAuthException catch (e) {
+                              if (e.code == 'weak-password') {
+                                print('The password provided is too weak.');
+                              } else if (e.code == 'email-already-in-use') {
+                                print('The account already exists for that email.');
+                              }
+                            } catch (e) {
+                              print(e);
+                            }
+
+                          }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,30 +103,8 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(
                           height: 50,
                           width: 300,
-                          child: RegButton(text: "Sign Up", onPressed: () async {
-
-                            try {
-                               await credential.createUserWithEmailAndPassword(
-                                email: email.text,
-                                password: password.text,
-                              ).whenComplete((){
-
-                                log("hdj");
-                                Navigator.of(context).pushReplacementNamed("homepage");
-                              });
-                              log("asd");
-
-                            } on FirebaseAuthException catch (e) {
-                              if (e.code == 'weak-password') {
-                                print('The password provided is too weak.');
-                              } else if (e.code == 'email-already-in-use') {
-                                print('The account already exists for that email.');
-                              }
-                            } catch (e) {
-                              print(e);
-                            }
-
-                          },),
+                          child: RegButton(text: "Sign Up", onPressed: (){
+                          addAcount(email.text,password.text);},),
 
 
                         ),
