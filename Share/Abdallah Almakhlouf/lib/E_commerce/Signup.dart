@@ -19,6 +19,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController username = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  final FirebaseAuth credential= FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +81,7 @@ class _SignUpState extends State<SignUp> {
                           child: RegButton(text: "Sign Up", onPressed: () async {
 
                             try {
-                              final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                               await credential.createUserWithEmailAndPassword(
                                 email: email.text,
                                 password: password.text,
                               ).whenComplete((){
